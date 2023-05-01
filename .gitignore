@@ -1,0 +1,5 @@
+# mysql data folder
+/mysql80/data
+
+# Apache
+/Apache24/logs
