@@ -56,6 +56,34 @@
     C:\drupal\Apache24\bin\httpd.exe -k start
     ```
 
+5. DBスキーマの準備
+
+    ```sql
+    CREATE DATABASE IF NOT EXISTS drupal;
+    -- DROP DATABASE IF EXISTS drupal;
+    
+    CREATE USER 'drupal' IDENTIFIED BY 'password';
+    GRANT ALL PRIVILEGES ON drupal.* TO 'drupal';
+    ```
+
+    > DBダンプ取得(CMD実施してください)
+
+    ```cmd
+    REM スキーマ
+    C:\drupal\mysql80\bin\mysqldump.exe --user=root --skip-password --single-transaction --no-data --routines drupal > C:\drupal\mysql\01.drupal.schema.sql
+    REM データ
+    C:\drupal\mysql80\bin\mysqldump.exe --user=root --skip-password drupal --single-transaction --no-create-info > C:\drupal\mysql\02.drupal.data.sql
+    ```
+
+    > DBダンプの復元(CMD実施してください)
+
+    ```cmd
+    REM スキーマ
+    C:\drupal\mysql80\bin\mysql.exe --user=root --skip-password drupal < C:\drupal\mysql\01.drupal.schema.sql
+    REM データ
+    C:\drupal\mysql80\bin\mysql.exe --user=root --skip-password drupal < C:\drupal\mysql\02.drupal.data.sql
+    ```
+
 ## 参照
 
 1. [System requirements](https://www.drupal.org/docs/getting-started/system-requirements)
