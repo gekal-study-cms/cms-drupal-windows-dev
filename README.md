@@ -79,9 +79,9 @@
 
     ```cmd
     REM スキーマ
-    C:\drupal\mysql80\bin\mysql.exe --user=root --skip-password drupal < C:\drupal\mysql\01.drupal.schema.sql
+    C:\drupal\mysql80\bin\mysql.exe --user=root --skip-password --default-character-set=utf8 drupal < C:\drupal\mysql\01.drupal.schema.sql
     REM データ
-    C:\drupal\mysql80\bin\mysql.exe --user=root --skip-password drupal < C:\drupal\mysql\02.drupal.data.sql
+    C:\drupal\mysql80\bin\mysql.exe --user=root --skip-password --default-character-set=utf8 drupal < C:\drupal\mysql\02.drupal.data.sql
     ```
 
 ## 参照
