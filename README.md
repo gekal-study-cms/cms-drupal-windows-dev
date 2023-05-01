@@ -84,6 +84,28 @@
     C:\drupal\mysql80\bin\mysql.exe --user=root --skip-password --default-character-set=utf8 drupal < C:\drupal\dump\02.drupal.data.sql
     ```
 
+6. Drupal本体設定
+
+    [こちら](https://www.drupal.org/project/drupal/releases?version=9)からDrupalをダウンロードして、`source`フォルダーに解答してください。
+
+    - DB設定項目
+
+        | 項目       | 設定値    |
+        | ---------- | --------- |
+        | ホスト     | localhost |
+        | ポート     | 3306      |
+        | ユーザ     | drupal    |
+        | パスワード | drupal    |
+        | スキーマ   | password  |
+
+    - 設定完了後の接続
+
+        URL: <http://localhost/>
+
+        | ユーザー | パスワード |
+        | -------- | ---------- |
+        | gekal    | 123456     |
+
 ## 参照
 
 1. [System requirements](https://www.drupal.org/docs/getting-started/system-requirements)
