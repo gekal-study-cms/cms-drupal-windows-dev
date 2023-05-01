@@ -70,18 +70,18 @@
 
     ```cmd
     REM スキーマ
-    C:\drupal\mysql80\bin\mysqldump.exe --user=root --skip-password --single-transaction --no-data --routines drupal > C:\drupal\mysql\01.drupal.schema.sql
+    C:\drupal\mysql80\bin\mysqldump.exe --user=root --skip-password --single-transaction --no-data --routines drupal > C:\drupal\dump\01.drupal.schema.sql
     REM データ
-    C:\drupal\mysql80\bin\mysqldump.exe --user=root --skip-password drupal --single-transaction --no-create-info > C:\drupal\mysql\02.drupal.data.sql
+    C:\drupal\mysql80\bin\mysqldump.exe --user=root --skip-password drupal --single-transaction --no-create-info > C:\drupal\dump\02.drupal.data.sql
     ```
 
     > DBダンプの復元(CMD実施してください)
 
     ```cmd
     REM スキーマ
-    C:\drupal\mysql80\bin\mysql.exe --user=root --skip-password --default-character-set=utf8 drupal < C:\drupal\mysql\01.drupal.schema.sql
+    C:\drupal\mysql80\bin\mysql.exe --user=root --skip-password --default-character-set=utf8 drupal < C:\drupal\dump\01.drupal.schema.sql
     REM データ
-    C:\drupal\mysql80\bin\mysql.exe --user=root --skip-password --default-character-set=utf8 drupal < C:\drupal\mysql\02.drupal.data.sql
+    C:\drupal\mysql80\bin\mysql.exe --user=root --skip-password --default-character-set=utf8 drupal < C:\drupal\dump\02.drupal.data.sql
     ```
 
 ## 参照
