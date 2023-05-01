@@ -22,7 +22,7 @@ Write-Host "----------------------------------------"
 $version = "2.4.55"
 $url = "https://www.apachehaus.com/downloads/httpd-${version}-o111s-x64-vs17.zip"
 
-Write-Host "php version: ${version}"
+Write-Host "apache version: ${version}"
 Write-Host "url: ${url}"
 
 If (!(test-path ".\Apache24")) {
@@ -41,7 +41,7 @@ Write-Host "----------------------------------------"
 $version = "8.1.18"
 $url = "https://windows.php.net/downloads/releases/php-${version}-Win32-vs16-x64.zip"
 
-Write-Host "apache version: ${version}"
+Write-Host "php version: ${version}"
 Write-Host "url: https://windows.php.net/downloads/releases/php-${version}-Win32-vs16-x64.zip"
 
 If (!(test-path ".\php81")) {
@@ -67,9 +67,14 @@ Write-Host "Pathに[%PHP_HOME%]を追加してください。"
 
 Write-Host "----------------------------------------"
 
+Write-Host "copy my.ini"
 Copy-Item "configs\mysql\my.ini" -Destination "mysql80"
+Write-Host "copy httpd.conf"
 Copy-Item "configs\apache\httpd.conf" -Destination "Apache24\conf"
+Write-Host "copy php.ini"
 Copy-Item "configs\php\php.ini" -Destination "php81"
+Write-Host "copy php_xdebug.dll"
+Copy-Item "configs\xdebug\php_xdebug.dll" -Destination "php81\ext"
 
 Write-Host "何かキーを押してください。" -NoNewLine
 [Console]::ReadKey() | Out-Null
