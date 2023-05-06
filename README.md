@@ -99,7 +99,7 @@
 
 6. Drupal本体設定
 
-    [こちら](https://www.drupal.org/project/drupal/releases?version=9)からDrupalをダウンロードして、`source`フォルダーに解答してください。
+    [こちら](https://www.drupal.org/project/drupal/releases?version=9)からDrupalをダウンロードして、`source`フォルダーに解凍してください。
 
     - DB設定項目
 
