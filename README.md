@@ -106,6 +106,22 @@
         | -------- | ---------- |
         | gekal    | 123456     |
 
+## VSCodeのデバッグ
+
+> デバッグコンフィグ: `./.vscode/launch.json`
+> ソースパス: `C:\drupal\source`
+
+```json
+"pathMappings": {
+    "C:\\drupal\\source": "${workspaceFolder}\\source"
+}
+```
+
+VS Code で `F5` キーを押して、デバッグを開始します。
+ブレークポイントを付けて、通常通りにデバッグできます。
+
+![Debug View](/images/debug-view.png)
+
 ## 参照
 
 1. [System requirements](https://www.drupal.org/docs/getting-started/system-requirements)
