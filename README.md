@@ -35,12 +35,12 @@
     C:\drupal\mysql80\bin\mysqld.exe --install MySQL
     Start-Service -Name "MySQL"
     
-    # サービスの削除(管理者権限要)
+    # サービスの停止&削除(管理者権限要)
     Stop-Service -Name "MySQL"
     C:\drupal\mysql80\bin\mysqld.exe --remove
 
-    # コマンドプロンプトの接続
-    C:\drupal\mysql80\bin\mysql.exe -u root --skip-password
+    # サービスの再起動(管理者権限要)
+    Restart-Service -Name "MySQL"
     ```
 
 4. Apacheのセットアップ
@@ -54,9 +54,22 @@
 
     # サービスの起動
     C:\drupal\Apache24\bin\httpd.exe -k start
+
+    # サービスの停止
+    C:\drupal\Apache24\bin\httpd.exe -k stop
+
+    # サービスの再起動
+    C:\drupal\Apache24\bin\httpd.exe -k restart
     ```
 
 5. DBスキーマの準備
+
+    ```powershell
+    # コマンドプロンプトの接続
+    C:\drupal\mysql80\bin\mysql.exe -u root --skip-password
+    ```
+
+    > DB&Userの作成SQL
 
     ```sql
     CREATE DATABASE IF NOT EXISTS drupal;
